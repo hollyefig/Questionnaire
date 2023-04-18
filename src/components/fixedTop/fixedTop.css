@@ -1,7 +1,7 @@
 .fixedTopWrapper {
   background-color: var(--darkGrey);
   width: 100%;
-  height: auto;
+  height: var(--fixedTopSpace);
   position: fixed;
   animation: slideDown 1s ease-in forwards;
 }

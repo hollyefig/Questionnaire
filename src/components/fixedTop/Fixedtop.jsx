@@ -1,17 +1,18 @@
 import React from 'react';
 import './fixedTop.css'
 
-export default function Fixedtop() {
+export default function Fixedtop({combo}) {
+
+  console.log('combo', combo)
   return (
+    <>
     <div className='fixedTopWrapper'>
       <div className="fixedTopCopy">
         <ul>
-          <li>1</li>
-          <li>2</li>
-          <li></li>
-          <li></li>
+          {combo.map(e => <li>{e}</li>)}
         </ul>
       </div>
     </div>
+    </>
   )
 }

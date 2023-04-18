@@ -1,0 +1,24 @@
+.headerWrapper {
+  width: 100%;
+  margin-top: var(--fixedTopSpace);
+  height: calc(100vh - var(--fixedTopSpace));
+}
+
+.headerContent {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.headerContent > * {
+  padding: 5px 0;
+}
+
+.headerContent > h1 {
+  color: var(--teal);
+  font-weight: normal;
+  font-size: 45px;
+}
