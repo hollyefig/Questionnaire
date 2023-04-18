@@ -1,8 +1,18 @@
 .fixedTopWrapper {
-  background-color: #191b1f;
+  background-color: var(--darkGrey);
   width: 100%;
   height: 150px;
   position: fixed;
+  animation: slideDown 1s ease-in forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    top: -50vh;
+  }
+  100% {
+    top: 0vh;
+  }
 }
 
 .fixedTopCopy {
@@ -13,6 +23,18 @@
   align-items: center;
   padding: 10px;
   font-size: 5rem;
+  animation: fadeIn 0.5s ease-in forwards;
+  animation-delay: 1.5s;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .fixedTopCopy > ul {

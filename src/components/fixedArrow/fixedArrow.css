@@ -1,0 +1,48 @@
+.fixedArrowWrapper {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+
+.fixedArrowContent {
+  width: 100%;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrowButton {
+  --dim: 90px;
+  background-color: var(--teal);
+  color: var(--darkGrey);
+  width: var(--dim);
+  height: var(--dim);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  position: relative;
+}
+
+.arrowButton > .material-symbols-outlined {
+  font-size: 3rem;
+  position: absolute;
+  animation: arrowMove 2s ease-in-out infinite;
+}
+
+@keyframes arrowMove {
+  0% {
+    top: 20px;
+  }
+
+  50% {
+    top: 30px;
+  }
+
+  100% {
+    top: 20px;
+  }
+}

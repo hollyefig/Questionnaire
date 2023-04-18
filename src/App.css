@@ -7,4 +7,5 @@ body {
   color: #fff;
   font-family: "Montserrat", sans-serif;
   --teal: rgb(0, 255, 195);
+  --darkGrey: #191b1f;
 }
