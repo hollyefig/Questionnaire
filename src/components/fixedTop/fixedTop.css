@@ -1,7 +1,7 @@
 .fixedTopWrapper {
   background-color: var(--darkGrey);
   width: 100%;
-  height: 150px;
+  height: auto;
   position: fixed;
   animation: slideDown 1s ease-in forwards;
 }
@@ -21,8 +21,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  font-size: 5rem;
+  padding: 15px;
+  font-size: 4rem;
   animation: fadeIn 0.5s ease-in forwards;
   animation-delay: 1.5s;
   opacity: 0;
