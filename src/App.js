@@ -1,17 +1,10 @@
 import "./App.css";
-import { useState } from "react";
+import Fixedtop from "./components/fixedTop/Fixedtop";
 
 function App() {
-  const [word, setWord] = useState("Hello There");
-
-  setTimeout(() => {
-    setWord("General Kenobi");
-  }, 2000);
   return (
     <div className="App">
-      <header className="App-header">
-        <p>{word}</p>
-      </header>
+      <Fixedtop />
     </div>
   );
 }
