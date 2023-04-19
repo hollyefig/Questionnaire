@@ -1,6 +1,21 @@
 .question1Wrapper,
-.question2Wrapper {
+.question2Wrapper,
+.question3Wrapper,
+.question4Wrapper {
   width: 100%;
   margin-top: var(--fixedTopSpace);
-  height: calc(100vh - var(--fixedTopSpace));
+  height: 100vh;
+  border: 1px solid transparent;
+}
+
+.q1ContentWindow,
+.q2ContentWindow,
+.q3ContentWindow,
+.q4ContentWindow {
+  margin-top: var(--fixedTopSpace);
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2em;
 }

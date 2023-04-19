@@ -5,7 +5,8 @@ import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  // hide strict mode tags to prevent double rendering
+  // <React.StrictMode>
+  <App />
+  // </React.StrictMode>
 );
