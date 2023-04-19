@@ -84,4 +84,7 @@
   .qAnswerWrapper {
     width: 100%;
   }
+  .qHeading > h2 {
+    font-size: 1.5rem;
+  }
 }

@@ -33,7 +33,7 @@ function App() {
     const observer = new IntersectionObserver(observeCallback, {
       root: null,
       rootMargin: "0px",
-      threshold: 0,
+      threshold: 0.5,
     });
 
     const q1 = q1ref.current,

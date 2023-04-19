@@ -4,6 +4,7 @@
   height: var(--fixedTopSpace);
   position: fixed;
   animation: slideDown 1s ease-in forwards;
+  z-index: 10;
 }
 
 @keyframes slideDown {
