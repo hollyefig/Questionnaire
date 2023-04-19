@@ -5,7 +5,7 @@
   width: 100%;
   margin-top: var(--fixedTopSpace);
   height: 100vh;
-  border: 1px solid transparent;
+  padding: 1px 0 0 0;
 }
 
 .q1ContentWindow,
@@ -17,5 +17,71 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  flex-direction: column;
   padding: 2em;
+}
+
+.qHeading > h2 {
+  color: var(--teal);
+  font-size: 2rem;
+}
+
+.qAnswerWrapper {
+  display: block;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  padding: 1em;
+}
+
+.qAnswerWrapper > ul {
+  list-style-type: none;
+}
+
+.qAnswerWrapper > ul > li {
+  padding: 1em 0;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.qAnswerWrapper > ul > li > input[type="radio"] {
+  --dim: 25px;
+  margin: 0 1em 0 0;
+  appearance: none;
+  background-color: var(--darkGrey);
+  width: var(--dim);
+  height: var(--dim);
+  border-radius: calc(var(--dim) / 2);
+  display: grid;
+  place-content: center;
+}
+
+.qAnswerWrapper > ul > li > input[type="radio"]::before {
+  --dim: 0.85em;
+  content: "";
+  width: var(--dim);
+  height: var(--dim);
+  border-radius: calc(var(--dim) / 2);
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--teal);
+}
+
+.qAnswerWrapper > ul > li > input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+@media only screen and (max-width: 500px) {
+  .q1ContentWindow,
+  .q2ContentWindow,
+  .q3ContentWindow,
+  .q4ContentWindow {
+    padding: 1em;
+  }
+
+  .qAnswerWrapper {
+    width: 100%;
+  }
 }
