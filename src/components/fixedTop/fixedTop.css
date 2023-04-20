@@ -5,6 +5,11 @@
   position: fixed;
   animation: slideDown 1s ease-in forwards;
   z-index: 10;
+  transition: height 0.2s ease-in-out;
+}
+
+.fullHeight {
+  height: 100vh;
 }
 
 @keyframes slideDown {

@@ -19,7 +19,8 @@ function App() {
     [blurOverlay, setBlurOverlay] = useState(false),
     [answerMsg, setAnswerMsg] = useState(),
     // dictate question number
-    [num, setNum] = useState(-1);
+    [num, setNum] = useState(-1),
+    [endQuestion, setEndQuestion] = useState(false);
 
   // remove blur overlay
   const removeBlurOverlay = () => {
@@ -33,9 +34,19 @@ function App() {
     } else {
       setNum(0);
     }
+
+    if (num === questionData.length) {
+      setEndQuestion(true);
+    }
     removeBlurOverlay();
     setArrowShow(false);
   };
+
+  console.log(
+    "status of num, complete",
+    num === questionData.length,
+    endQuestion
+  );
 
   // when answer is clicked
   const answerClicked = (e, qd) => {
@@ -74,7 +85,7 @@ function App() {
 
   return (
     <div className="App">
-      <Fixedtop combo={combo} />
+      <Fixedtop combo={combo} endQuestion={endQuestion} />
       <Header />
       {questionData.map((e) => {
         return <Question answerClicked={answerClicked} data={e} />;
