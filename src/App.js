@@ -15,7 +15,6 @@ function App() {
   const [combo, setCombo] = useState(["-", "-", "-", "-"]);
   const [arrowShow, setArrowShow] = useState(true);
   const [blurOverlay, setBlurOverlay] = useState(false);
-  const [answer, setAnswer] = useState(false);
   const [answerMsg, setAnswerMsg] = useState();
   // dictate question number
   const [num, setNum] = useState(0);
@@ -32,15 +31,30 @@ function App() {
       setNum(1);
     }
     removeBlurOverlay();
+    setArrowShow(false);
   };
 
   // when answer is clicked
-  const answerClicked = (e) => {
+  const answerClicked = (e, qd) => {
+    console.log("qd", qd.id);
     setBlurOverlay(true);
 
-    e.isTrue
-      ? setAnswerMsg("Correct! Press the arrow to proceed!")
-      : setAnswerMsg("Sorry! Try again! ");
+    if (e.isTrue) {
+      setAnswerMsg(
+        <>
+          <h2>(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</h2>
+          <p>Correct! Press the arrow to proceed!</p>
+        </>
+      );
+      setArrowShow(true);
+    } else {
+      setAnswerMsg(
+        <>
+          <h2>(◡︵◡)</h2>
+          <p>Sorry! Try again!</p>
+        </>
+      );
+    }
   };
 
   return (
@@ -51,7 +65,7 @@ function App() {
       <Question2 />
       <Question3 />
       <Question4 />
-      <Fixedarrow scrollDown={scrollDown} num={num} />
+      <Fixedarrow scrollDown={scrollDown} num={num} arrowShow={arrowShow} />
       {blurOverlay && <Bluroverlay blurOverlay={blurOverlay} />}
       <Answermsg
         blurOverlay={blurOverlay}

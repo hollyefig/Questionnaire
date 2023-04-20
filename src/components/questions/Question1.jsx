@@ -16,8 +16,8 @@ export default function Question1({answerClicked}) {
 
             {questionData[0].answers.map(e => {
               return (
-              <li>
-              <input type='radio' name={questionData[0].radioName} id={e.id} onClick={() => answerClicked(e)} />
+              <li onClick={() => answerClicked(e, questionData[0])}>
+              <input type='radio' name={questionData[0].radioName} id={e.id} />
               <label for={e.id}>{e.answer}</label>
               </li>
               )

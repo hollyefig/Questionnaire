@@ -1,12 +1,11 @@
 import React from "react";
 import "./fixedArrow.css";
-import { useState } from "react";
 
-export default function Fixedarrow({num, scrollDown}) {
+export default function Fixedarrow({num, scrollDown, arrowShow}) {
 
 
   return (
-    <div className='fixedArrowWrapper'>
+    <div className='fixedArrowWrapper' style={{visibility: arrowShow ?'visible' : 'hidden', opacity: arrowShow ? 1 : 0}}>
       <div className='fixedArrowContent'>
       <a href={`#q${num}`}>
         <div className='arrowButton' onClick={scrollDown}>
