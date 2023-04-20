@@ -27,13 +27,14 @@ function App() {
     } else if (ent[0].target.id === "question3Wrapper") {
       setQ3Visible(ent[0].isIntersecting);
     }
+    console.log(ent);
   };
 
   useEffect(() => {
     const observer = new IntersectionObserver(observeCallback, {
       root: null,
       rootMargin: "0px",
-      threshold: 0.5,
+      threshold: 1,
     });
 
     const q1 = q1ref.current,

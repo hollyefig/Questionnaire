@@ -4,8 +4,6 @@ import { questionData } from '../../questionData';
 
 export default function Question1({q1ref}) {
 
-console.log(questionData[0].answers)
-
 
   return (
     <div className='question1Wrapper' id="question1Wrapper" ref={q1ref}>
