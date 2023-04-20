@@ -1,17 +1,17 @@
+.question0Wrapper,
 .question1Wrapper,
 .question2Wrapper,
-.question3Wrapper,
-.question4Wrapper {
+.question3Wrapper {
   width: 100%;
   margin-top: var(--fixedTopSpace);
   height: 100vh;
   padding: 1px 0 0 0;
 }
 
+.q0ContentWindow,
 .q1ContentWindow,
 .q2ContentWindow,
-.q3ContentWindow,
-.q4ContentWindow {
+.q3ContentWindow {
   margin-top: var(--fixedTopSpace);
   width: 100%;
   display: flex;

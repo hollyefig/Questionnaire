@@ -7,7 +7,7 @@ export default function Fixedtop({combo}) {
     <div className='fixedTopWrapper'>
       <div className="fixedTopCopy">
         <ul>
-          {combo.map(e => <li>{e}</li>)}
+          {Object.values(combo).map(e => <li>{e}</li>)}
         </ul>
       </div>
     </div>

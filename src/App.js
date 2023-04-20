@@ -4,31 +4,34 @@ import { questionData } from "./questionData";
 import Fixedarrow from "./components/fixedArrow/Fixedarrow";
 import Fixedtop from "./components/fixedTop/Fixedtop";
 import Header from "./components/header/Header";
-import Question1 from "./components/questions/Question1";
-import Question2 from "./components/questions/Question2";
-import Question3 from "./components/questions/Question3";
-import Question4 from "./components/questions/Question4";
+import Question from "./components/questions/Question";
 import Bluroverlay from "./components/blurOverlay/Bluroverlay";
 import Answermsg from "./components/blurOverlay/Answermsg";
 
 function App() {
-  const [combo, setCombo] = useState(["-", "-", "-", "-"]);
-  const [arrowShow, setArrowShow] = useState(true);
-  const [blurOverlay, setBlurOverlay] = useState(false);
-  const [answerMsg, setAnswerMsg] = useState();
-  // dictate question number
-  const [num, setNum] = useState(0);
+  const [combo, setCombo] = useState({
+      0: "-",
+      1: "-",
+      2: "-",
+      3: "-",
+    }),
+    [arrowShow, setArrowShow] = useState(true),
+    [blurOverlay, setBlurOverlay] = useState(false),
+    [answerMsg, setAnswerMsg] = useState(),
+    // dictate question number
+    [num, setNum] = useState(-1);
 
   // remove blur overlay
   const removeBlurOverlay = () => {
     setBlurOverlay(false);
   };
 
+  // scroll
   const scrollDown = () => {
-    if (num < 4) {
+    if (num < questionData.length) {
       setNum(num + 1);
     } else {
-      setNum(1);
+      setNum(0);
     }
     removeBlurOverlay();
     setArrowShow(false);
@@ -36,9 +39,9 @@ function App() {
 
   // when answer is clicked
   const answerClicked = (e, qd) => {
-    console.log("qd", qd.id);
     setBlurOverlay(true);
 
+    // if answer is correct
     if (e.isTrue) {
       setAnswerMsg(
         <>
@@ -47,7 +50,19 @@ function App() {
         </>
       );
       setArrowShow(true);
-    } else {
+
+      if (qd.id === 0) {
+        setCombo({ ...combo, 0: e.number });
+      } else if (qd.id === 1) {
+        setCombo({ ...combo, 1: e.number });
+      } else if (qd.id === 2) {
+        setCombo({ ...combo, 2: e.number });
+      } else if (qd.id === 3) {
+        setCombo({ ...combo, 3: e.number });
+      }
+    }
+    // if answer is wrong
+    else {
       setAnswerMsg(
         <>
           <h2>(◡︵◡)</h2>
@@ -61,10 +76,10 @@ function App() {
     <div className="App">
       <Fixedtop combo={combo} />
       <Header />
-      <Question1 answerClicked={answerClicked} />
-      <Question2 />
-      <Question3 />
-      <Question4 />
+      {questionData.map((e) => {
+        return <Question answerClicked={answerClicked} data={e} />;
+      })}
+
       <Fixedarrow scrollDown={scrollDown} num={num} arrowShow={arrowShow} />
       {blurOverlay && <Bluroverlay blurOverlay={blurOverlay} />}
       <Answermsg
