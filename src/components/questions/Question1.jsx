@@ -2,7 +2,7 @@ import React from 'react'
 import './questions.css';
 import { questionData } from '../../questionData';
 
-export default function Question1() {
+export default function Question1({answerClicked}) {
 
 
   return (
@@ -17,12 +17,11 @@ export default function Question1() {
             {questionData[0].answers.map(e => {
               return (
               <li>
-              <input type='radio' name={questionData[0].radioName} id={e.id}/>
+              <input type='radio' name={questionData[0].radioName} id={e.id} onClick={() => answerClicked(e)} />
               <label for={e.id}>{e.answer}</label>
               </li>
               )
             })}
-
           </ul>
         </div>
       </div>

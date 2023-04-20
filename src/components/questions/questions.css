@@ -73,6 +73,28 @@
   transform: scale(1);
 }
 
+.submitWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submitWrapper button {
+  appearance: none;
+  background-color: var(--teal);
+  color: var(--darkGrey);
+  padding: 1em 2.5em;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.submitWrapper button:active {
+  background-color: var(--darkTeal);
+}
+
 @media only screen and (max-width: 500px) {
   .q1ContentWindow,
   .q2ContentWindow,

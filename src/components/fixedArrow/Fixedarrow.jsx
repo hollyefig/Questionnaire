@@ -2,15 +2,8 @@ import React from "react";
 import "./fixedArrow.css";
 import { useState } from "react";
 
-export default function Fixedarrow() {
+export default function Fixedarrow({num, scrollDown}) {
 
-const [num, setNum] = useState(0);
-
-const scrollDown = (e) => {
-  if (num < 4) {
-  setNum(num + 1)
-  }
-}
 
   return (
     <div className='fixedArrowWrapper'>
