@@ -13,3 +13,7 @@ body {
   --darkGrey: #191b1f;
   --fixedTopSpace: 110px;
 }
+
+html {
+  scroll-behavior: smooth;
+}

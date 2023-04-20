@@ -1,26 +1,26 @@
 import React from "react";
 import "./fixedArrow.css";
+import { useState } from "react";
 
-export default function Fixedarrow({q1ref, q2ref, q3ref, q4ref, q1Visible, q2Visible, q3Visible}) {
+export default function Fixedarrow() {
 
-  const scrollDown = () => {
-    q1ref.current?.scrollIntoView({ behavior: "smooth" });
-    if (q1Visible) {
-      q2ref.current?.scrollIntoView({ behavior: "smooth" });
-    } else if (q2Visible) {
-      q3ref.current?.scrollIntoView({ behavior: "smooth" });
-    } else if (q3Visible) {
-      q4ref.current?.scrollIntoView({ behavior: "smooth" });
-    }
+const [num, setNum] = useState(0);
 
+const scrollDown = (e) => {
+  if (num < 4) {
+  setNum(num + 1)
   }
+}
 
   return (
     <div className='fixedArrowWrapper'>
       <div className='fixedArrowContent'>
+      <a href={`#q${num}`}>
         <div className='arrowButton' onClick={scrollDown}>
           <span class='material-symbols-outlined'>arrow_downward</span>
         </div>
+      </a>
+
       </div>
     </div>
   );
