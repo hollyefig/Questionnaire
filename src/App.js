@@ -35,18 +35,13 @@ function App() {
       setNum(0);
     }
 
-    if (num === questionData.length) {
+    if (num === questionData.length - 1) {
       setEndQuestion(true);
     }
+
     removeBlurOverlay();
     setArrowShow(false);
   };
-
-  console.log(
-    "status of num, complete",
-    num === questionData.length,
-    endQuestion
-  );
 
   // when answer is clicked
   const answerClicked = (e, qd) => {
