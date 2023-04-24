@@ -23,6 +23,7 @@ function App() {
     [endQuestion, setEndQuestion] = useState(false);
 
   // remove blur overlay
+
   const removeBlurOverlay = () => {
     setBlurOverlay(false);
   };
@@ -34,7 +35,6 @@ function App() {
     } else {
       setNum(0);
     }
-
     if (num === questionData.length - 1) {
       setEndQuestion(true);
     }
