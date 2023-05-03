@@ -20,16 +20,21 @@ function App() {
     [answerMsg, setAnswerMsg] = useState(),
     // dictate question number
     [num, setNum] = useState(-1),
-    [endQuestion, setEndQuestion] = useState(false);
+    [endQuestion, setEndQuestion] = useState(false),
+    [isCorrect, setIsCorrect] = useState(false);
 
   // remove blur overlay
 
   const removeBlurOverlay = () => {
-    setBlurOverlay(false);
+    if (isCorrect === false) {
+      setBlurOverlay(false);
+    }
   };
 
   // scroll
   const scrollDown = () => {
+    setIsCorrect(false);
+
     if (num < questionData.length) {
       setNum(num + 1);
     } else {
@@ -39,7 +44,7 @@ function App() {
       setEndQuestion(true);
     }
 
-    removeBlurOverlay();
+    setBlurOverlay(false);
     setArrowShow(false);
   };
 
@@ -49,6 +54,7 @@ function App() {
 
     // if answer is correct
     if (e.isTrue) {
+      setIsCorrect(true);
       setAnswerMsg(
         <>
           <h2>(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</h2>
